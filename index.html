@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Gramática - Infografía Secuencial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .page {
+            background: white;
+            width: 100%;
+            height: auto;
+            min-height: 1200px;
+            margin: 20px auto;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* LÁMINA 1 */
+        .page-1 {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 20px 30px;
+        }
+        
+        .page-1::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .page-1::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-1 {
+            text-align: center;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-1 h1 {
+            font-size: 28px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-1 .subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .intro-box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .intro-box h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .intro-box p {
+            line-height: 1.5;
+            font-size: 12px;
+        }
+
+        .grammar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .grammar-card {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grammar-card:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.95);
+        }
+
+        .grammar-card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grammar-card p {
+            font-size: 11px;
+            line-height: 1.4;
+            color: #000000;
+            flex-grow: 1;
+        }
+
+        .icon {
+            display: inline-block;
+            font-size: 28px;
+        }
+
+        /* LÁMINA 2 */
+        .page-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 28px 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 1200px;
+        }
+        
+        .page-2::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 16px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .grammar-item {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 9px;
+            border-left: 5px solid #ffd700;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .grammar-item:hover {
+            background: rgba(255,255,255,0.95);
+            transform: translateX(5px);
+        }
+
+        .grammar-item h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .grammar-item .definition {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            color: #000000;
+        }
+
+        .grammar-item .example {
+            background: rgba(255,255,255,0.4);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 8px;
+            line-height: 1.5;
+            color: #000000;
+        }
+
+        .example-label {
+            font-weight: bold;
+            color: #1a1a2e;
+            font-style: normal;
+        }
+
+        /* LÁMINA 3 */
+        .page-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #1a1a2e;
+            padding: 25px 40px;
+            position: relative;
+            overflow: hidden;
+            min-height: 1200px;
+        }
+        
+        .page-3::before {
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .final-section {
+            margin-bottom: 12px;
+        }
+
+        .modern-card {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .modern-card:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+        }
+
+        .modern-card h3 {
+            font-size: 16px;
+            color: #667eea;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modern-card p {
+            font-size: 11px;
+            line-height: 1.4;
+            color: #444;
+        }
+
+        .modern-card .highlight {
+            background: #f0f0f0;
+            padding: 6px;
+            border-radius: 6px;
+            margin-top: 5px;
+            font-size: 10px;
+        }
+
+        .references {
+            background: rgba(255,255,255,0.95);
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin-top: 12px;
+        }
+
+        .references h3 {
+            font-size: 22px;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .references ul {
+            list-style: none;
+            font-size: 12px;
+            line-height: 2.2;
+            color: #444;
+        }
+
+        .references li {
+            margin-bottom: 14px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .references li:before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 10px;
+            font-style: italic;
+            color: #1a1a2e;
+            line-height: 1.3;
+        }
+
+        .number-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #ffd700;
+            color: #1a1a2e;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(255,215,0,0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .grammar-card:hover .number-badge {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .svg-icon {
+            margin-bottom: 10px;
+        }
+
+        .members {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border-left: 5px solid #ffd700;
+        }
+
+        .members h3 {
+            font-size: 20px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .members-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .member {
+            background: rgba(30, 60, 114, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #1a1a2e;
+            border-left: 3px solid #667eea;
+        }
+
+        .member strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- LÁMINA 1: Gramáticas Clásicas y Tradicionales -->
+        <div class="page page-1">
+            <div class="header-1">
+                <!-- Decorative book illustration -->
+                <svg width="80" height="80" viewBox="0 0 100 100" style="margin: 0 auto 15px; display: block;">
+                    <rect x="20" y="15" width="60" height="70" fill="#ffd700" rx="3"/>
+                    <rect x="25" y="20" width="50" height="60" fill="#fff" rx="2"/>
+                    <line x1="50" y1="20" x2="50" y2="80" stroke="#ffd700" stroke-width="2"/>
+                    <rect x="30" y="30" width="15" height="2" fill="#667eea"/>
+                    <rect x="30" y="38" width="35" height="2" fill="#667eea"/>
+                    <rect x="30" y="46" width="35" height="2" fill="#667eea"/>
+                    <rect x="55" y="30" width="15" height="2" fill="#667eea"/>
+                    <rect x="55" y="38" width="15" height="2" fill="#667eea"/>
+                </svg>
+                <h1>📚 TIPOS DE GRAMÁTICA</h1>
+                <p class="subtitle">Clasificación y Estudio de las Normas del Lenguaje</p>
+                <p class="subtitle" style="font-size: 14px; margin-top: 10px;">Morfología del Castellano</p>
+            </div>
+
+            <div class="intro-box">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <svg width="50" height="50" viewBox="0 0 100 100" style="flex-shrink: 0;">
+                        <circle cx="50" cy="50" r="40" fill="rgba(255,215,0,0.3)"/>
+                        <text x="50" y="65" text-anchor="middle" font-size="50" fill="#ffd700">Ñ</text>
+                    </svg>
+                    <div style="flex: 1;">
+                        <h2 style="margin-bottom: 15px;"><span class="icon">📖</span> ¿Qué es la Gramática?</h2>
+                        <p>La gramática es el estudio de las normas y principios que rigen el uso de la lengua y la estructura de las palabras en las oraciones. La lingüística se divide en cuatro niveles: fonético-fonológico, sintáctico-morfológico, léxico-semántico y pragmático.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; margin-bottom: 10px; font-size: 18px;">CLASIFICACIÓN PRINCIPAL</h2>
+
+            <div class="grammar-grid">
+                <div class="grammar-card">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="svg-icon">
+                        <rect x="25" y="20" width="50" height="60" fill="#ffd700" rx="3"/>
+                        <rect x="30" y="25" width="40" height="50" fill="rgba(255,255,255,0.8)" rx="2"/>
+                        <line x1="35" y1="35" x2="60" y2="35" stroke="#667eea" stroke-width="2"/>
+                        <line x1="35" y1="45" x2="60" y2="45" stroke="#667eea" stroke-width="2"/>
+                        <line x1="35" y1="55" x2="60" y2="55" stroke="#667eea" stroke-width="2"/>
+                    </svg>
+                    <h3><span class="number-badge">1</span> Gramática Tradicional</h3>
+                    <p>Congrega las doctrinas gramaticales heredadas del Imperio Romano y Griego. Establece terminología para clasificar elementos gramaticales.</p>
+                </div>
+
+                <div class="grammar-card">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="svg-icon">
+                        <circle cx="50" cy="50" r="30" fill="none" stroke="#ffd700" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="5" fill="#ffd700"/>
+                        <line x1="50" y1="50" x2="70" y2="35" stroke="#ffd700" stroke-width="3"/>
+                    </svg>
+                    <h3><span class="number-badge">2</span> Gramática Sincrónica</h3>
+                    <p>Estudia una lengua en un período histórico específico sin considerar su transformación posterior.</p>
+                </div>
+
+                <div class="grammar-card">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="svg-icon">
+                        <path d="M 30 70 Q 50 30, 70 70" fill="none" stroke="#ffd700" stroke-width="3"/>
+                        <circle cx="30" cy="70" r="5" fill="#ffd700"/>
+                        <circle cx="50" cy="45" r="5" fill="#ffd700"/>
+                        <circle cx="70" cy="70" r="5" fill="#ffd700"/>
+                    </svg>
+                    <h3><span class="number-badge">3</span> Gramática Diacrónica</h3>
+                    <p>Estudia la transformación del lenguaje a través de su historia para descifrar y justificar sus consecuencias.</p>
+                </div>
+
+                <div class="grammar-card">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="svg-icon">
+                        <circle cx="35" cy="50" r="15" fill="rgba(255,215,0,0.5)"/>
+                        <circle cx="65" cy="50" r="15" fill="rgba(255,215,0,0.5)"/>
+                        <circle cx="50" cy="50" r="10" fill="#ffd700"/>
+                    </svg>
+                    <h3><span class="number-badge">4</span> Gramática Comparada</h3>
+                    <p>Nació en el siglo XVIII al descubrir relaciones entre sánscrito, griego clásico y latín. Busca conexiones entre lenguas.</p>
+                </div>
+
+                <div class="grammar-card">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="svg-icon">
+                        <rect x="30" y="30" width="40" height="40" fill="none" stroke="#ffd700" stroke-width="3" rx="3"/>
+                        <path d="M 40 50 L 47 57 L 60 43" fill="none" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <h3><span class="number-badge">5</span> Gramática Normativa</h3>
+                    <p>Introduce normas para el uso correcto del lenguaje. Dictamina lo correcto e incorrecto al hablar y escribir.</p>
+                </div>
+
+                <div class="grammar-card">
+                    <svg width="40" height="40" viewBox="0 0 100 100" class="svg-icon">
+                        <circle cx="50" cy="50" r="25" fill="none" stroke="#ffd700" stroke-width="3"/>
+                        <line x1="35" y1="45" x2="50" y2="45" stroke="#ffd700" stroke-width="2"/>
+                        <line x1="35" y1="55" x2="65" y2="55" stroke="#ffd700" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="8" fill="rgba(255,215,0,0.5)"/>
+                    </svg>
+                    <h3><span class="number-badge">6</span> Gramática Descriptiva</h3>
+                    <p>Describe las disciplinas de fonética, fonología, morfología y sintaxis. Analiza la estructura completa de una lengua.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LÁMINA 2: Gramáticas Específicas con Ejemplos -->
+        <div class="page page-2">
+            <!-- Decorative magnifying glass -->
+            <svg width="60" height="60" viewBox="0 0 100 100" style="margin: 0 auto 10px; display: block;">
+                <circle cx="40" cy="40" r="25" fill="none" stroke="#ffd700" stroke-width="4"/>
+                <circle cx="40" cy="40" r="20" fill="rgba(255,255,255,0.3)"/>
+                <line x1="58" y1="58" x2="80" y2="80" stroke="#ffd700" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+            <h2 class="section-title">🔍 TIPOS ESPECÍFICOS DE GRAMÁTICA</h2>
+
+            <div class="grammar-item">
+                <h3><span class="icon">📜</span> Gramática Prescriptiva o Normativa</h3>
+                <p class="definition">Establece usos recomendados en la norma culta de una comunidad y orienta especialmente los registros formales y académicos.</p>
+                <div class="example">
+                    <span class="example-label">✏️ Ejemplo:</span> La Real Academia Española (RAE) dicta las normas del español. Ejemplo de norma: "Se escribe 'había' no 'habían' cuando es impersonal."
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3><span class="icon">🔬</span> Gramática Descriptiva</h3>
+                <p class="definition">No prescribe normas, sino que investiga y analiza la estructura de una lengua. Indica qué lenguas despliegan estructuras parecidas y puntualiza la organización de morfemas y constituyentes.</p>
+                <div class="example">
+                    <span class="example-label">✏️ Conceptos clave:</span> Morfema: gat-o-s (raíz: gat, desinencia: o-s) | Palabra: forma mínima libre | Frase: Los gatos negros | Oración: Los gatos negros toman la sopa
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3><span class="icon">⚙️</span> Gramática Funcional</h3>
+                <p class="definition">Propuesta por Simon Dik, se enfoca en las relaciones funcionales de los componentes. Atiende tres <strong>estándares de adecuación</strong>: tipológica (aplicable a cualquier lengua), pragmática (uso comunicativo) y psicológica (compatibilidad con mecanismos del procesamiento natural del lenguaje).</p>
+                <div class="example">
+                    <span class="example-label">✏️ Niveles:</span> Semántico (papeles semánticos), Sintáctico (sujeto/objeto), Pragmático (carácter informativo)
+                </div>
+            </div>
+
+            <div class="grammar-item">
+                <h3><span class="icon">🔄</span> Gramática Comparada</h3>
+                <p class="definition">Surgió al observar relaciones entre lenguas indoeuropeas. Estudia paralelismos y evoluciones lingüísticas entre idiomas.</p>
+                <div class="example">
+                    <span class="example-label">✏️ Ejemplo – "pie":</span><br>
+                    Sánscrito: <strong>pāda</strong> | Griego: <strong>pous/pod-</strong> | Latín: <strong>pēs, pedis</strong> | Inglés: <strong>foot</strong> (Proto-germánico: <strong>*fōtuz</strong>)<br>
+                    <small style="display: block; margin-top: 5px;">Se observa el cambio sistemático <em>p &gt; f</em> descrito por la ley de Grimm (correspondencias regulares entre lenguas indoeuropeas).</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- LÁMINA 3: Gramáticas Modernas y Referencias -->
+        <div class="page page-3">
+            <!-- Decorative lightbulb for modern ideas -->
+            <svg width="50" height="50" viewBox="0 0 100 100" style="margin: 0 auto 10px; display: block;">
+                <circle cx="50" cy="35" r="20" fill="#ffd700"/>
+                <rect x="45" y="55" width="10" height="15" fill="#667eea" rx="2"/>
+                <rect x="42" y="70" width="16" height="4" fill="#667eea" rx="1"/>
+                <line x1="30" y1="25" x2="22" y2="17" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+                <line x1="70" y1="25" x2="78" y2="17" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+                <line x1="25" y1="35" x2="15" y2="35" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+                <line x1="75" y1="35" x2="85" y2="35" stroke="#ffd700" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <h2 class="section-title" style="color: #1a1a2e; font-size: 24px; margin-bottom: 12px;">⚡ GRAMÁTICAS MODERNAS</h2>
+
+            <div class="final-section">
+                <div class="modern-card">
+                    <h3><span class="icon">🏗️</span> Gramática Estructuralista</h3>
+                    <p>Se centra en la lengua como <em>sistema</em> (langue) frente a los actos particulares de habla (parole). Prioriza la estructura y las oposiciones dentro del sistema, sin limitarse a lo escrito ni a lo oral.</p>
+                    <div class="highlight">
+                        <strong>Principio fundamental:</strong> Estudiar el habla real, no solo textos escritos.
+                    </div>
+                </div>
+
+                <div class="modern-card">
+                    <h3><span class="icon">🧬</span> Gramática Generativa</h3>
+                    <p>Iniciada por Noam Chomsky, modela cómo reglas finitas generan infinitas oraciones. Su influencia fue clave en el auge moderno de la psicolingüística, disciplina con raíces previas a mediados del siglo XX.</p>
+                    <div class="highlight">
+                        <strong>Innovación:</strong> Explica cómo generamos infinitas oraciones con reglas finitas.
+                    </div>
+                </div>
+
+                <div class="modern-card">
+                    <h3><span class="icon">➕</span> Gramática Formal</h3>
+                    <p>Es un modelo matemático conformado por categorías sintácticas ordenadas mediante reglas específicas. Delimita la instauración de categorías a partir de otras categorías o símbolos gramaticales.</p>
+                    <div class="highlight">
+                        <strong>Aplicación:</strong> Base de lenguajes de programación y procesamiento automático del lenguaje.
+                    </div>
+                </div>
+            </div>
+
+            <div class="references">
+                <h3>📚 REFERENCIAS BIBLIOGRÁFICAS</h3>
+                <ul>
+                    <li>Banco de la República. (2017). <em>La gramática del castellano</em>. https://enciclopedia.banrepcultural.org/index.php/La_gram%C3%A1tica_del_castellano</li>
+                    <li>Cáceres Ramírez, O. (2019). <em>Tipos de gramática</em>. https://www.aboutespanol.com/tipos-de-gramatica-2879706</li>
+                    <li>Gómez Torrego, L. (2010). <em>Gramática didáctica del español</em>. Madrid: Ediciones SM.</li>
+                    <li>Mantecón Ramírez, B. (1989). Justificación de la gramática escolar. <em>Cauce: Revista Internacional de Filología, Comunicación y sus Didácticas</em>, (12), 59-92. Universidad de Málaga.</li>
+                    <li>Real Academia Española & Asociación de Academias de la Lengua Española. (2009). <em>Nueva gramática de la lengua española</em>. Madrid: Espasa Libros.</li>
+                    <li>Tipos.co. (2017). <em>Tipos de gramática</em>. https://www.tipos.co/tipos-de-gramatica/</li>
+                </ul>
+            </div>
+
+            <div class="members">
+                <h3>👥 INTEGRANTES</h3>
+                <div class="members-list">
+                    <div class="member">
+                        <strong>1. Héctor Alejandro Cruz Ramírez</strong>
+                    </div>
+                    <div class="member">
+                        <strong>2. Andy Jhoan Navarrete Ramos</strong>
+                    </div>
+                    <div class="member">
+                        <strong>3. Martin Alfonso Chicas Ramírez</strong>
+                    </div>
+                    <div class="member">
+                        <strong>4. Emerson Giancarlo Castro Pleitez</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-note">
+                <p><strong>"La energía de la mente es la esencia de la vida"</strong> - Aristóteles</p>
+                <p style="margin-top: 5px; font-size: 9px;">Morfología del Castellano | Ingeniería en Sistemas y Redes Informáticas</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
